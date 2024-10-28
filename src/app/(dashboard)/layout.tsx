@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/sidebar"
 import { Bell } from "lucide-react"
 
-
 export default function DashboardLayout({
     children,
 }: Readonly<{
@@ -16,7 +15,7 @@ export default function DashboardLayout({
     return (
         <SidebarProvider>
             <AppSidebar />
-            <SidebarInset>
+            <SidebarInset className="overflow-x-hidden">
                 <header className="flex w-full h-10 justify-between items-center px-2 lg:px-4 pt-2">
                     <div className="flex justify-start items-center">
                         <SidebarTrigger />
@@ -26,7 +25,9 @@ export default function DashboardLayout({
                         <Bell className="h-5 w-5 cursor-pointer" />
                     </div>
                 </header>
-                {children}
+                <div className="container mx-auto p-2 lg:p-4">
+                    {children}
+                </div>
             </SidebarInset>
         </SidebarProvider>
     );
