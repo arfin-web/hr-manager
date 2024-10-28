@@ -30,6 +30,14 @@ export default function AddNew() {
                         />
                     </div>
                     <div className="grid gap-2">
+                        <Label htmlFor="image">Picture</Label>
+                        <Input
+                            id="image"
+                            type="file"
+                            required
+                        />
+                    </div>
+                    <div className="grid gap-2">
                         <Label htmlFor="email">Email</Label>
                         <Input
                             id="email"
