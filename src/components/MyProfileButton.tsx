@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { useProfile } from "@/hooks/useProfile";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
     DropdownMenu,
@@ -15,52 +15,15 @@ import {
 import { useRouter } from "next/navigation";
 
 export default function MyProfileButton() {
-    const [profile, setProfile] = useState<any>(null);
-    const [error, setError] = useState("");
+    const { profile, error, handleLogout } = useProfile();
     const router = useRouter();
-
-    const getProfile = async () => {
-        const token = localStorage.getItem("token");
-
-        if (!token) {
-            setError("No token found, please log in.");
-            return;
-        }
-
-        try {
-            const response = await fetch("http://localhost:5001/api/v1/auth/profile", {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "application/json",
-                },
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                setProfile(result.data);
-            } else {
-                setError(result.message || "Failed to fetch profile data.");
-            }
-        } catch (err) {
-            console.error("Error:", err);
-            setError("An error occurred while fetching profile data.");
-        }
-    };
-
-    useEffect(() => {
-        getProfile();
-    }, []);
 
     if (error) {
         return <div>{error}</div>;
     }
 
-    const handleLogout = () => {
-        localStorage.removeItem("token");
-        setProfile(null);
-        router.push("/");
+    if (!profile) {
+        return <div>Loading profile...</div>;
     }
     return (
         <DropdownMenu>
