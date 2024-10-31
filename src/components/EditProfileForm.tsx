@@ -13,7 +13,7 @@ const EditProfile = ({ profileData }: any) => {
             email: profileData.email,
             designation: profileData.designation,
             stipend: profileData.stipend,
-            password: "",
+            stipendStatus: profileData.stipendStatus,
             role: profileData.role,
         },
     });
@@ -69,11 +69,6 @@ const EditProfile = ({ profileData }: any) => {
             <div className="grid gap-2 mt-2">
                 <Label htmlFor="stipend">Stipend</Label>
                 <Input id="stipend" type="number" {...register("stipend", { required: "Stipend is required" })} />
-            </div>
-
-            <div className="grid gap-2 mt-2">
-                <Label htmlFor="password">Password</Label>
-                <Input id="password" type="password" {...register("password", { required: "Password is required" })} />
             </div>
 
             <div className="grid gap-2 mt-2">
