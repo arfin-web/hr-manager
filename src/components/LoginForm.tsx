@@ -1,23 +1,49 @@
-import Link from "next/link"
+"use client"
 
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useRouter } from "next/navigation";
 
 export function LoginForm() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const router = useRouter();
+
+  // Define the onSubmit function to handle form submission
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await fetch("http://localhost:5001/api/v1/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Login successful!");
+        localStorage.setItem("token", result.token)
+        console.log("Token:", result.token);
+        router.push("/overview");
+      } else {
+        alert(result.message || "Failed to login");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div className="container mx-auto px-2 lg:px-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
         <div>
           <img
-            src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?t=st=1730020063~exp=1730023663~hmac=27e6f52899e8cc9fc999d4cdf085de7e527c5515e21de390f89ec6f9af3d4f75&w=740"
+            src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg"
             alt="login"
             className="w-full object-cover"
           />
@@ -30,35 +56,31 @@ export function LoginForm() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4">
+            <form className="grid gap-4" onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
                   type="email"
                   placeholder="m@example.com"
-                  required
+                  {...register("email", { required: "Email is required" })}
                 />
               </div>
               <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                </div>
-                <Input id="password" type="password" required />
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  {...register("password", { required: "Password is required" })}
+                />
               </div>
               <Button type="submit" className="w-full">
                 Login
               </Button>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?
-              <Link href="#" className="underline">
-                Sign up
-              </Link>
-            </div>
+            </form>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
