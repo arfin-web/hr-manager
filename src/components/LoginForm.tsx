@@ -27,7 +27,6 @@ export function LoginForm() {
       if (response.ok) {
         alert("Login successful!");
         localStorage.setItem("token", result.token)
-        console.log("Token:", result.token);
         router.push("/overview");
       } else {
         alert(result.message || "Failed to login");

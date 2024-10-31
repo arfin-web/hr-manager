@@ -5,7 +5,7 @@ import {
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { Bell } from "lucide-react"
+import MyProfileButton from "@/components/MyProfileButton"
 
 export default function DashboardLayout({
     children,
@@ -21,9 +21,7 @@ export default function DashboardLayout({
                         <SidebarTrigger />
                         <Separator orientation="vertical" className="ml-2 h-4" />
                     </div>
-                    <div>
-                        <Bell className="h-5 w-5 cursor-pointer" />
-                    </div>
+                    <MyProfileButton />
                 </header>
                 <div className="container mx-auto p-2 lg:p-4">
                     {children}
