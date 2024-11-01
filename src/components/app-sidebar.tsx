@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { BellElectric, CircleDollarSign, LayoutDashboard, Network, User, Users } from "lucide-react"
+import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, Network, User, Users } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -57,6 +57,12 @@ const navMain = [
     url: "/my-payroll",
     icon: <CircleDollarSign className="w-4 h-4" />,
     role: "employee"
+  },
+  {
+    title: "All Tasks",
+    url: "/all-tasks",
+    icon: <ClipboardList className="w-4 h-4" />,
+    role: "admin"
   },
   {
     title: "Notice",

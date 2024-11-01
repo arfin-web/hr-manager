@@ -46,8 +46,8 @@ export default function AddNew() {
 
             if (response.ok) {
                 alert("Notice added successfully!");
-                reset(); // Clear form inputs
-                setDate(new Date()); // Reset the calendar date
+                reset();
+                setDate(new Date());
             } else {
                 alert(result.message || "Failed to add notice.");
             }
