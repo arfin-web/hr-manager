@@ -9,7 +9,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default async function Profile({ params }: { params: { id: string } }) {
-    const { id } = await params
+    const { id } = params
     let data = await fetch(`http://localhost:5001/api/v1/employees/${id}`)
     let result = await data.json()
     const profile = result.data
