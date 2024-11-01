@@ -16,13 +16,14 @@ export default function DashboardLayout({
         <SidebarProvider>
             <AppSidebar />
             <SidebarInset className="overflow-x-hidden">
-                <header className="flex w-full h-10 justify-between items-center px-2 lg:px-4 pt-2">
+                <header className="flex w-full h-14 justify-between items-center px-2 lg:px-4 pt-2">
                     <div className="flex justify-start items-center">
                         <SidebarTrigger />
                         <Separator orientation="vertical" className="ml-2 h-4" />
                     </div>
                     <MyProfileButton />
                 </header>
+                <Separator />
                 <div className="container mx-auto p-2 lg:p-4">
                     {children}
                 </div>

@@ -1,6 +1,7 @@
 "use client"
 import { Briefcase, ChartNoAxesColumnIncreasing, UserCheck, Users } from "lucide-react"
 import { useProfile } from "@/hooks/useProfile";
+import DashboardLoader from "@/components/DashboardLoader";
 
 const adminData = [
   {
@@ -52,7 +53,7 @@ export default function Overview() {
   }
 
   if (!profile) {
-    return <div>Loading profile...</div>;
+    return <DashboardLoader />;
   }
   return (
     <div className="flex flex-1 flex-col gap-4">

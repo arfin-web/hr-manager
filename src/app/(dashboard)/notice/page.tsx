@@ -17,11 +17,10 @@ import UpdatedNoticeForm from "@/components/UpdateNoticeForm"
 import { format } from "date-fns"
 import { BellElectric, Edit, Trash } from "lucide-react"
 import Link from "next/link"
+import getNotices from "@/hooks/getNotices"
 
 export default async function Notice() {
-    let data = await fetch('http://localhost:5001/api/v1/notice')
-    let result = await data.json()
-    const notices = result.data
+    const { notices } = await getNotices()
     return (
         <div className="flex flex-1 flex-col gap-4">
             <div className="w-full flex justify-between items-center px-2">
