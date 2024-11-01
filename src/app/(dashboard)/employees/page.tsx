@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button"
 import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
+import {
     Table,
     TableBody,
     TableCell,
@@ -10,6 +15,7 @@ import {
 import { Trash, Eye } from "lucide-react"
 import Link from "next/link"
 import getEmployees from "@/hooks/getEmployees"
+import DeleteEmployeeConfirmation from "@/components/DeleteEmployeeConfirmation"
 
 export default async function Employees() {
     const employees = await getEmployees()
@@ -24,7 +30,7 @@ export default async function Employees() {
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className="w-12">Name</TableHead>
+                        <TableHead className="w-12 lg:w-auto">Name</TableHead>
                         <TableHead>Designation</TableHead>
                         <TableHead>Stipend</TableHead>
                         <TableHead>Action</TableHead>
@@ -42,9 +48,16 @@ export default async function Employees() {
                                         <Eye className="h-4 w-4" />
                                     </Button>
                                 </Link>
-                                <Button variant="destructive" size="icon">
-                                    <Trash className="h-4 w-4" />
-                                </Button>
+                                <Popover>
+                                    <PopoverTrigger asChild>
+                                        <Button variant="destructive" size="icon">
+                                            <Trash className="h-4 w-4" />
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-80 p-3">
+                                        <DeleteEmployeeConfirmation profileData={employee} />
+                                    </PopoverContent>
+                                </Popover>
                             </TableCell>
                         </TableRow>
                     ))}

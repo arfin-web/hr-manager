@@ -1,3 +1,4 @@
+import DeleteNoticeConfirmation from "@/components/DeleteNoticeConfirmation"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -7,6 +8,11 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
 import UpdatedNoticeForm from "@/components/UpdateNoticeForm"
 import { format } from "date-fns"
 import { BellElectric, Edit, Trash } from "lucide-react"
@@ -54,9 +60,16 @@ export default async function Notice() {
                                         <UpdatedNoticeForm noticeData={item} />
                                     </DialogContent>
                                 </Dialog>
-                                <Button variant="destructive" size="icon">
-                                    <Trash className="h-4 w-4" />
-                                </Button>
+                                <Popover>
+                                    <PopoverTrigger asChild>
+                                        <Button variant="destructive" size="icon">
+                                            <Trash className="h-4 w-4" />
+                                        </Button>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-80 p-3">
+                                        <DeleteNoticeConfirmation noticeData={item} />
+                                    </PopoverContent>
+                                </Popover>
                             </div>
                         </div>
                     ))
