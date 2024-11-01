@@ -1,12 +1,12 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
 import EditProfileForm from '@/components/EditProfileForm'
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default async function Profile({ params }: { params: { id: string } }) {
     const { id } = await params
@@ -52,16 +52,14 @@ export default async function Profile({ params }: { params: { id: string } }) {
                                 <p>$ {profile.stipend}</p>
                             </div>
                         </div>
-                        <Accordion type="single" collapsible className='w-auto lg:w-80 mt-5'>
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger className='text-primary font-bold'>
-                                    Edit Profile
-                                </AccordionTrigger>
-                                <AccordionContent>
-                                    <EditProfileForm profileData={profile} />
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
+                        <Popover>
+                            <PopoverTrigger asChild className="mt-5 lg:mt-60 w-full flex justify-center lg:justify-start">
+                                <Button variant="link" size="lg" className="font-bold text-lg">Edit Profile</Button>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-80">
+                                <EditProfileForm profileData={profile} />
+                            </PopoverContent>
+                        </Popover>
                     </CardContent>
                 </Card>
             </div>

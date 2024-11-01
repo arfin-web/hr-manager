@@ -43,7 +43,7 @@ const EditProfile = ({ profileData }: any) => {
     };
 
     return (
-        <form className="border-none rounded-xl shadow-md p-2" onSubmit={handleSubmit(onSubmit)}>
+        <form className="border-none" onSubmit={handleSubmit(onSubmit)}>
             <h1 className="text-xl font-bold mt-2">Edit <span className="text-primary">Profile</span></h1>
 
             <div className="grid gap-2 mt-2">
@@ -66,21 +66,23 @@ const EditProfile = ({ profileData }: any) => {
                 <Input id="designation" type="text" {...register("designation", { required: "Designation is required" })} />
             </div>
 
-            <div className="grid gap-2 mt-2">
-                <Label htmlFor="stipend">Stipend</Label>
-                <Input id="stipend" type="number" {...register("stipend", { required: "Stipend is required" })} />
+            <div className="grid grid-cols-2 gap-2">
+                <div className="grid gap-2 mt-2">
+                    <Label htmlFor="stipend">Stipend</Label>
+                    <Input id="stipend" type="number" {...register("stipend", { required: "Stipend is required" })} />
+                </div>
+
+                <div className="grid gap-2 mt-2">
+                    <Label htmlFor="role">Role</Label>
+                    <select id="role" {...register("role", { required: "Role is required" })}>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="employee">Employee</option>
+                    </select>
+                </div>
             </div>
 
-            <div className="grid gap-2 mt-2">
-                <Label htmlFor="role">Role</Label>
-                <select id="role" {...register("role", { required: "Role is required" })}>
-                    <option value="">Select Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                </select>
-            </div>
-
-            <Button type="submit" className="my-5">
+            <Button type="submit" className="mt-3">
                 Confirm
             </Button>
         </form>

@@ -17,7 +17,7 @@ export default async function Payroll() {
             <Table>
                 <TableHeader>
                     <TableRow>
-                        <TableHead className="w-12">Name</TableHead>
+                        <TableHead className="w-12 lg:w-auto">Name</TableHead>
                         <TableHead>Designation</TableHead>
                         <TableHead>Stipend</TableHead>
                         <TableHead>Action</TableHead>
