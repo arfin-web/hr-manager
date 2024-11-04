@@ -14,7 +14,7 @@ export default function SubmitTaskForm({ taskData }: any) {
             instruction: taskData.instruction,
             deadlinetime: taskData.deadlinetime,
             submitTask: taskData.submitTask,
-            status: "Submited"
+            status: "submited"
         },
     });
 

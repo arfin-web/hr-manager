@@ -12,48 +12,12 @@ import {
 import { Eye } from "lucide-react"
 import Link from "next/link"
 import { format } from "date-fns"
-import { useEffect, useState } from "react"
+import { useTasks } from "@/hooks/useTasks"
 import { useProfile } from "@/hooks/useProfile"
-import { getBaseUrl } from "@/helpers/config/envConfig"
 
 const MyTasks = () => {
-    const [myTasks, setMyTasks] = useState<any>(null);
-    const [error, setError] = useState("");
     const { profile } = useProfile();
-
-    const fetchMyTasks = async () => {
-        const token = localStorage.getItem("token");
-
-        if (!token) {
-            setError("No token found, please log in.");
-            return;
-        }
-
-        try {
-            const response = await fetch(`${getBaseUrl()}/tasks`, {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "application/json",
-                },
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                setMyTasks(result.data);
-            } else {
-                setError(result.message || "Failed to fetch myTasks data.");
-            }
-        } catch (err) {
-            console.error("Error:", err);
-            setError("An error occurred while fetching myTasks data.");
-        }
-    };
-
-    useEffect(() => {
-        fetchMyTasks();
-    }, []);
+    const { tasks } = useTasks();
     return (
         <div className="flex flex-1 flex-col gap-4">
             <h2 className="text-lg font-bold">My Tasks</h2>
@@ -67,7 +31,7 @@ const MyTasks = () => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {myTasks?.map((task: any) => {
+                    {tasks?.map((task: any) => {
                         if (task?.email === profile?.email) {
                             return (
                                 <TableRow key={task._id}>

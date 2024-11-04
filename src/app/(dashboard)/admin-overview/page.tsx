@@ -12,19 +12,19 @@ const AdminOverview = async () => {
     {
       id: 1,
       title: "Total Employess",
-      value: `${employees?.length}`,
+      value: `${employees?.length || 0}`,
       icon: <Users className="w-5 h-5 text-primary" />
     },
     {
       id: 2,
       title: "Total Task Assigned",
-      value: `${tasks?.length}`,
+      value: `${tasks?.length || 0}`,
       icon: <ClipboardCheck className="w-5 h-5 text-primary" />
     },
     {
       id: 3,
       title: "Todays Notice",
-      value: `${notices?.length}`,
+      value: `${notices?.length || 0}`,
       icon: <UserCheck className="w-5 h-5 text-primary" />
     }
   ]
