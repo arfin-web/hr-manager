@@ -30,7 +30,7 @@ export function LoginForm() {
       if (response.ok) {
         alert("Login successful!");
         localStorage.setItem("token", result.token)
-        router.push("/overview");
+        router.push("/welcome")
       } else {
         alert(result.message || "Failed to login");
       }

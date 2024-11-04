@@ -20,7 +20,7 @@ import Link from "next/link"
 import getNotices from "@/hooks/getNotices"
 
 const Notice = async () => {
-    const { notices } = await getNotices()
+    const notices = await getNotices()
     return (
         <div className="flex flex-1 flex-col gap-4">
             <div className="w-full flex justify-between items-center px-2">

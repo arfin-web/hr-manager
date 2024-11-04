@@ -24,13 +24,13 @@ import { usePathname } from "next/navigation"
 const navMain = [
   {
     title: "Overview",
-    url: "/overview",
+    url: "/admin-overview",
     icon: <LayoutDashboard className="w-4 h-4" />,
     role: "admin"
   },
   {
     title: "Overview",
-    url: "/overview",
+    url: "/employee-overview",
     icon: <LayoutDashboard className="w-4 h-4" />,
     role: "employee"
   },
@@ -63,6 +63,12 @@ const navMain = [
     url: "/all-tasks",
     icon: <ClipboardList className="w-4 h-4" />,
     role: "admin"
+  },
+  {
+    title: "My Tasks",
+    url: "/my-tasks",
+    icon: <ClipboardList className="w-4 h-4" />,
+    role: "employee"
   },
   {
     title: "Notice",

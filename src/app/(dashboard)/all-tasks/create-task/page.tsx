@@ -89,7 +89,7 @@ const CreateTaskForm = () => {
                 <Label htmlFor="deadlinetime">Deadline Time</Label>
                 <Input
                     id="deadlinetime"
-                    type="time"
+                    type="text"
                     {...register("deadlinetime", { required: "Deadline time is required" })}
                 />
             </div>
