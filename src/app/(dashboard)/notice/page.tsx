@@ -19,7 +19,7 @@ import { BellElectric, Edit, Trash } from "lucide-react"
 import Link from "next/link"
 import getNotices from "@/hooks/getNotices"
 
-export default async function Notice() {
+const Notice = async () => {
     const { notices } = await getNotices()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -77,3 +77,5 @@ export default async function Notice() {
         </div>
     )
 }
+
+export default Notice

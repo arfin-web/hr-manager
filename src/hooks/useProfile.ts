@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 export function useProfile() {
     const [profile, setProfile] = useState<any>(null);
@@ -15,7 +16,7 @@ export function useProfile() {
         }
 
         try {
-            const response = await fetch("http://localhost:5001/api/v1/auth/profile", {
+            const response = await fetch(`${getBaseUrl()}/auth/profile`, {
                 method: "GET",
                 headers: {
                     "Authorization": `Bearer ${token}`,

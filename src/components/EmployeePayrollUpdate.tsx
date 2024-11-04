@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 const EmployeePayrollUpdate = ({ profileData }: any) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -20,7 +21,7 @@ const EmployeePayrollUpdate = ({ profileData }: any) => {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await fetch(`http://localhost:5001/api/v1/employees/${profileData._id}`, {
+            const response = await fetch(`${getBaseUrl()}/employees/${profileData._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

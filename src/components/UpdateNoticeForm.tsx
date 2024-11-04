@@ -15,6 +15,7 @@ import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { useForm } from "react-hook-form"
 import { CalendarIcon } from "lucide-react"
+import { getBaseUrl } from "@/helpers/config/envConfig"
 
 export default function UpdatedNoticeForm({ noticeData }: any) {
     const [date, setDate] = useState<Date | any>(new Date())
@@ -29,7 +30,7 @@ export default function UpdatedNoticeForm({ noticeData }: any) {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await fetch(`http://localhost:5001/api/v1/notice/${noticeData?._id}`, {
+            const response = await fetch(`${getBaseUrl()}/notice/${noticeData?._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

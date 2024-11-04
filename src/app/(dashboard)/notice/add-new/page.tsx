@@ -15,6 +15,7 @@ import { format } from "date-fns"
 import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { useForm } from "react-hook-form"
+import { getBaseUrl } from "@/helpers/config/envConfig"
 
 type FormData = {
     title: string;
@@ -22,7 +23,7 @@ type FormData = {
     note: string;
 };
 
-export default function AddNew() {
+const AddNew = () => {
     const [date, setDate] = useState<Date | any>(new Date())
     const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
@@ -33,7 +34,7 @@ export default function AddNew() {
         };
 
         try {
-            const response = await fetch("http://localhost:5001/api/v1/notice", {
+            const response = await fetch(`${getBaseUrl()}/notice`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -113,3 +114,5 @@ export default function AddNew() {
         </Card>
     );
 }
+
+export default AddNew

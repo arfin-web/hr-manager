@@ -1,12 +1,13 @@
 "use client"
 
+import { getBaseUrl } from "@/helpers/config/envConfig";
 import { Button } from "./ui/button";
 
 export default function DeleteNoticeConfirmation({ noticeData }: any) {
     const handleDelete = async (id: any) => {
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch(`http://localhost:5001/api/v1/notice/${id}`, {
+            const response = await fetch(`${getBaseUrl()}/notice/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Authorization": `Bearer ${token}`,

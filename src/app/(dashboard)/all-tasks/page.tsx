@@ -17,7 +17,7 @@ import Link from "next/link"
 import getTasks from "@/hooks/getTasks"
 import DeleteEmployeeConfirmation from "@/components/DeleteEmployeeConfirmation"
 
-export default async function AllTasks() {
+const AllTasks = async () => {
     const tasks = await getTasks()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -66,3 +66,5 @@ export default async function AllTasks() {
         </div>
     )
 }
+
+export default AllTasks

@@ -7,10 +7,11 @@ import {
 import EditProfileForm from '@/components/EditProfileForm'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { getBaseUrl } from "@/helpers/config/envConfig"
 
-export default async function Profile({ params }: { params: { id: any } }) {
+const Profile = async ({ params }: { params: { id: any } }) => {
     const { id } = params
-    let data = await fetch(`http://localhost:5001/api/v1/employees/${id}`)
+    let data = await fetch(`${getBaseUrl()}/employees/${id}`)
     let result = await data.json()
     const profile = result.data
     return (
@@ -66,3 +67,5 @@ export default async function Profile({ params }: { params: { id: any } }) {
         </div>
     )
 }
+
+export default Profile

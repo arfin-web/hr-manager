@@ -2,7 +2,7 @@ import { format } from "date-fns"
 import { BellElectric } from "lucide-react"
 import getNotices from "@/hooks/getNotices"
 
-export default async function Notices() {
+const Notices = async () => {
     const notices = await getNotices()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -26,3 +26,5 @@ export default async function Notices() {
         </div>
     )
 }
+
+export default Notices

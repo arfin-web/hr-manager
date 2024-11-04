@@ -45,7 +45,7 @@ const employeeData = [
   }
 ]
 
-export default function Overview() {
+const Overview = () => {
   const { profile, error } = useProfile();
 
   if (error) {
@@ -98,3 +98,5 @@ export default function Overview() {
     </div>
   )
 }
+
+export default Overview

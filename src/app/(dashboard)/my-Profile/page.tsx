@@ -6,7 +6,7 @@ import { useProfile } from "@/hooks/useProfile";
 
 const dummyImage = "https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg?t=st=1730452307~exp=1730455907~hmac=b0088f853ad1c79e415d5ec3f056d118bf53287c5aa6bee94ef2655c6e15f966&w=740"
 
-export default function MyProfile() {
+const MyProfile = () => {
     const { profile } = useProfile()
     return (
         <div className="container mx-auto p-4">
@@ -53,3 +53,5 @@ export default function MyProfile() {
         </div>
     )
 }
+
+export default MyProfile

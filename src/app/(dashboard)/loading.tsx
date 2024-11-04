@@ -1,8 +1,9 @@
 import DashboardLoader from "@/components/DashboardLoader";
 
-export default function Loading() {
-    // Or a custom loading skeleton component
+const Loading = () => {
     return (
         <DashboardLoader />
     )
 }
+
+export default Loading

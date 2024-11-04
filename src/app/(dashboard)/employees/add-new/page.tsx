@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -16,7 +17,7 @@ const AddNew = () => {
 
     const onSubmit = async (data: any) => {
         try {
-            const response = await fetch("http://localhost:5001/api/v1/auth/register", {
+            const response = await fetch(`${getBaseUrl()}/auth/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

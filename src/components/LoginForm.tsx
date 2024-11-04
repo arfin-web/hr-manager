@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 export function LoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -13,8 +14,10 @@ export function LoginForm() {
 
   // Define the onSubmit function to handle form submission
   const onSubmit = async (data: any) => {
+    console.log(getBaseUrl());
+
     try {
-      const response = await fetch("http://localhost:5001/api/v1/auth/login", {
+      const response = await fetch(`${getBaseUrl()}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

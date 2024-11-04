@@ -17,7 +17,7 @@ import Link from "next/link"
 import getEmployees from "@/hooks/getEmployees"
 import DeleteEmployeeConfirmation from "@/components/DeleteEmployeeConfirmation"
 
-export default async function Employees() {
+const Employees = async () => {
     const employees = await getEmployees()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -66,3 +66,5 @@ export default async function Employees() {
         </div>
     )
 }
+
+export default Employees

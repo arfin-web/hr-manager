@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { useState } from "react";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 interface TaskFormValues {
     email: string;
@@ -18,13 +19,13 @@ interface TaskFormValues {
     submitTask?: "";
 }
 
-export default function CreateTaskForm() {
-    const { register, handleSubmit, setValue, formState: { errors }, reset } = useForm<TaskFormValues>();
+const CreateTaskForm = () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>();
     const [deadlineDate, setDeadlineDate] = useState<Date | any>(null);
 
     const onSubmit: SubmitHandler<TaskFormValues> = async (data) => {
         try {
-            const response = await fetch("http://localhost:5001/api/v1/tasks", {
+            const response = await fetch(`${getBaseUrl()}/tasks`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,3 +100,5 @@ export default function CreateTaskForm() {
         </form>
     );
 }
+
+export default CreateTaskForm

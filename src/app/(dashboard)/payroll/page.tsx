@@ -9,7 +9,7 @@ import {
 import EmployeePayrollUpdate from "@/components/EmployeePayrollUpdate"
 import getEmployees from "@/hooks/getEmployees"
 
-export default async function Payroll() {
+const Payroll = async () => {
     const employees = await getEmployees()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -39,3 +39,5 @@ export default async function Payroll() {
         </div>
     )
 }
+
+export default Payroll
