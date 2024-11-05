@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import { getBaseUrl } from "@/helpers/config/envConfig";
+import { ToastContainer, toast } from 'react-toastify';
 
 export function LoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -28,15 +29,30 @@ export function LoginForm() {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Login successful!");
         localStorage.setItem("token", result.token)
+        toast.success("Login successful!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+        })
         router.push("/welcome")
       } else {
-        alert(result.message || "Failed to login");
+        toast.error(result.message || "Failed to login", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+        })
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred. Please try again.");
+      toast.error("An error occurred. Please try again.", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+      })
     }
   };
 
@@ -83,6 +99,7 @@ export function LoginForm() {
           </CardContent>
         </Card>
       </div>
+      <ToastContainer />
     </div>
   );
 }

@@ -19,7 +19,7 @@ const Welcome = () => {
         <div className="w-full h-screen flex justify-center items-center">
             <div className="w-72 lg:w-96 p-3 rounded-xl shadow-md">
                 {
-                    profile && <h1 className="text-xl lg:text-3xl font-bold text-center my-3">Welcome {profile?.name}!</h1>
+                    profile && <h1 className="text-xl lg:text-3xl font-bold text-center my-3">Welcome <span className="text-primary">{profile?.name}!</span></h1>
                 }
             </div>
         </div>
