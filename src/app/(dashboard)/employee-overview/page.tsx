@@ -9,9 +9,9 @@ const EmployeeOverviewPage = () => {
     const { tasks } = useTasks();
 
     const myTasks = tasks?.filter((task: any) => task.email === profile?.email);
-    const totalPending = tasks?.filter((task: any) => task.status === "pending");
-    const totalSubmitted = tasks?.filter((task: any) => task.status === "submited");
-    const totalCompleted = tasks?.filter((task: any) => task.status === "done");
+    const totalPending = tasks?.filter((task: any) => task.status === "pending" && task.email === profile?.email);
+    const totalSubmitted = tasks?.filter((task: any) => task.status === "submited" && task.email === profile?.email);
+    const totalCompleted = tasks?.filter((task: any) => task.status === "done" && task.email === profile?.email);
 
     const employeeData = [
         {

@@ -23,7 +23,7 @@ const AdminOverview = async () => {
     },
     {
       id: 3,
-      title: "Todays Notice",
+      title: "Total Notices",
       value: `${notices?.length || 0}`,
       icon: <UserCheck className="w-5 h-5 text-primary" />
     }

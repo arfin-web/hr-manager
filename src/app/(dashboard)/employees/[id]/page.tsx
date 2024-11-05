@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { getBaseUrl } from "@/helpers/config/envConfig"
 
 const Profile = async ({ params }: { params: { id: any } }) => {
-    const { id } = params
+    const { id } = await params
     let data = await fetch(`${getBaseUrl()}/employees/${id}`)
     let result = await data.json()
     const profile = result.data
