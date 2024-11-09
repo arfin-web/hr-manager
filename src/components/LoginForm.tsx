@@ -4,10 +4,33 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 import { useRouter } from "next/navigation";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import { ToastContainer, toast } from 'react-toastify';
 import Image from "next/image";
+
+const adminLoginCredentials = {
+  email: "arfinpriom12@gmail.com",
+  password: "1234567",
+}
+
+const employeeLoginCredentials = {
+  email: "razib@gmail.com",
+  password: "1234567",
+}
 
 export function LoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -86,6 +109,54 @@ export function LoginForm() {
               Login
             </Button>
           </div>
+
+          <Tabs defaultValue="admin" className="mt-5">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="admin">Admin Credentials</TabsTrigger>
+              <TabsTrigger value="employee">Employee Credentials</TabsTrigger>
+            </TabsList>
+            <TabsContent value="admin">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Admin</CardTitle>
+                  <CardDescription>
+                    Copy Values for Login
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" defaultValue={adminLoginCredentials.email} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="password">Password</Label>
+                    <Input id="password" defaultValue={adminLoginCredentials.password} />
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="employee">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Employee</CardTitle>
+                  <CardDescription>
+                    Copy Values for Login
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" defaultValue={employeeLoginCredentials.email} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="password">Password</Label>
+                    <Input id="password" defaultValue={employeeLoginCredentials.password} />
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+
         </form>
         <div className="order-1 lg:order-2">
           <Image
