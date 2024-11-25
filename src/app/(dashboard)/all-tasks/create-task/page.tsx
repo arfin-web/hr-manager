@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { useState } from "react";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import { ToastContainer, toast } from 'react-toastify';
+import { useEmployees } from "@/hooks/useEmployees";
 
 interface TaskFormValues {
     email: string;
@@ -21,6 +22,7 @@ interface TaskFormValues {
 }
 
 const CreateTaskForm = () => {
+    const { employees } = useEmployees()
     const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>();
     const [deadlineDate, setDeadlineDate] = useState<Date | any>(null);
 
@@ -69,7 +71,18 @@ const CreateTaskForm = () => {
 
                 <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" {...register("email", { required: "Email is required" })} />
+                    <select
+                        {...register("email", { required: "Email is required" })}
+                        id="email"
+                        className="p-2 border border-muted rounded-md"
+                    >
+                        <option value="">Select Email</option>
+                        {
+                            employees?.map((employee: any) => (
+                                <option key={employee._id} value={employee.email}>{employee.email}</option>
+                            ))
+                        }
+                    </select>
                 </div>
 
                 <div className="grid gap-2">

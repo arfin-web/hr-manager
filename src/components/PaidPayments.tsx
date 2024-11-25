@@ -19,6 +19,7 @@ const PaidPayments = async () => {
                         <TableHead className="w-12 lg:w-auto">Name</TableHead>
                         <TableHead>Designation</TableHead>
                         <TableHead>Stipend</TableHead>
+                        <TableHead>Month</TableHead>
                         <TableHead>Status</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -28,6 +29,7 @@ const PaidPayments = async () => {
                             <TableCell className="font-medium">{employee.name}</TableCell>
                             <TableCell>{employee.designation}</TableCell>
                             <TableCell>${employee.stipend}</TableCell>
+                            <TableCell>{employee.month}</TableCell>
                             <TableCell>{employee.status}</TableCell>
                         </TableRow>
                     ))}
