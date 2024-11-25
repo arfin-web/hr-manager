@@ -1,3 +1,4 @@
+"use client"
 import { format } from "date-fns"
 
 const TaskInfos = ({ task }: any) => {

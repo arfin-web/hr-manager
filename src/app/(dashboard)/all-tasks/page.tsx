@@ -16,7 +16,6 @@ import { Trash, Eye } from "lucide-react"
 import Link from "next/link"
 import getTasks from "@/hooks/getTasks"
 import DeleteTaskConfirmation from "@/components/DeleteTaskConfirmation"
-import { format } from "date-fns"
 
 const AllTasks = async () => {
     const tasks = await getTasks()
@@ -41,7 +40,7 @@ const AllTasks = async () => {
                     {tasks?.map((task: any) => (
                         <TableRow key={task._id}>
                             <TableCell className="font-medium">{task.email}</TableCell>
-                            <TableCell>{format(task.deadlinedate, "PPP")}</TableCell>
+                            <TableCell>{task.deadlinedate}</TableCell>
                             <TableCell>{task.status}</TableCell>
                             <TableCell className="flex justify-start items-center gap-2">
                                 <Link href={`/all-tasks/${task._id}`}>

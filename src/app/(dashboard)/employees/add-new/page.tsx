@@ -7,6 +7,7 @@ import { getBaseUrl } from "@/helpers/config/envConfig";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
+import { useDepartments } from "@/hooks/useDepartment";
 
 const AddNew = () => {
     const {
@@ -15,6 +16,7 @@ const AddNew = () => {
         formState: { errors },
         reset,
     } = useForm();
+    const { departments } = useDepartments();
 
     const onSubmit = async (data: any) => {
         try {
@@ -102,6 +104,21 @@ const AddNew = () => {
                         type="text"
                         placeholder="eg. Software Engineer"
                     />
+                </div>
+
+                <div className="grid gap-2">
+                    <Label htmlFor="department">Department</Label>
+                    <select
+                        {...register("department", { required: "Department is required" })}
+                        id="department"
+                    >
+                        <option value="">Select department</option>
+                        {
+                            departments?.map((department: any) => (
+                                <option key={department._id} value={department.title}>{department.title}</option>
+                            ))
+                        }
+                    </select>
                 </div>
 
                 <div className="grid gap-2">

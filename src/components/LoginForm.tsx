@@ -23,13 +23,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import Image from "next/image";
 
 const adminLoginCredentials = {
-  email: "arfinpriom12@gmail.com",
-  password: "1234567",
+  email: "admin@admin.com",
+  password: "123456",
 }
 
 const employeeLoginCredentials = {
-  email: "razib@gmail.com",
-  password: "1234567",
+  email: "razib@company.com",
+  password: "123456",
 }
 
 export function LoginForm() {

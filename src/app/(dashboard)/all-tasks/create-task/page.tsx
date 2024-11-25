@@ -10,7 +10,6 @@ import { format } from "date-fns";
 import { useState } from "react";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import { ToastContainer, toast } from 'react-toastify';
-import { useRouter } from "next/navigation";
 
 interface TaskFormValues {
     email: string;
@@ -24,7 +23,6 @@ interface TaskFormValues {
 const CreateTaskForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<TaskFormValues>();
     const [deadlineDate, setDeadlineDate] = useState<Date | any>(null);
-    const router = useRouter()
 
     const onSubmit: SubmitHandler<TaskFormValues> = async (data) => {
         try {
@@ -45,9 +43,6 @@ const CreateTaskForm = () => {
                     closeOnClick: true,
                 })
                 reset()
-                setTimeout(() => {
-                    router.push('/all-tasks')
-                }, 3000);
             } else {
                 toast.error(result.message || "Failed to create task.", {
                     position: "top-center",
