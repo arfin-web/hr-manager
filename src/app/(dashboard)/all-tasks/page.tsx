@@ -15,7 +15,7 @@ import {
 import { Trash, Eye } from "lucide-react"
 import Link from "next/link"
 import getTasks from "@/hooks/getTasks"
-import DeleteTaskConfirmation from "@/components/DeleteTaskConfirmation"
+import DeleteTaskConfirmation from "@/components/dashboard/DeleteTaskConfirmation"
 
 const AllTasks = async () => {
     const tasks = await getTasks()

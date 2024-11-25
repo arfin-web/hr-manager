@@ -6,8 +6,8 @@ import {
 } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 import { getBaseUrl } from "@/helpers/config/envConfig"
-import TaskInfos from "@/components/TaskInfos"
-import SubmitTaskForm from "@/components/SubmitTaskForm"
+import TaskInfos from "@/components/dashboard/TaskInfos"
+import SubmitTaskForm from "@/components/dashboard/SubmitTaskForm"
 
 const TaskDetails = async ({ params }: { params: { id: any } }) => {
     const { id } = await params

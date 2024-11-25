@@ -1,5 +1,5 @@
-import DuePayments from "@/components/DuePayments"
-import PaidPayments from "@/components/PaidPayments"
+import DuePayments from "@/components/dashboard/DuePayments"
+import PaidPayments from "@/components/dashboard/PaidPayments"
 import {
     Tabs,
     TabsContent,

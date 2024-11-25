@@ -15,7 +15,7 @@ import {
 import { Trash, Eye } from "lucide-react"
 import Link from "next/link"
 import getEmployees from "@/hooks/getEmployees"
-import DeleteEmployeeConfirmation from "@/components/DeleteEmployeeConfirmation"
+import DeleteEmployeeConfirmation from "@/components/dashboard/DeleteEmployeeConfirmation"
 
 const Employees = async () => {
     const employees = await getEmployees()

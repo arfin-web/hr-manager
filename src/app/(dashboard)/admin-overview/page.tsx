@@ -2,8 +2,8 @@ import { ChartNoAxesColumnIncreasing, ClipboardCheck, Users, Users2 } from "luci
 import getEmployees from "@/hooks/getEmployees"
 import getTasks from "@/hooks/getTasks"
 import getStipends from "@/hooks/getStipends"
-import EmployeesChart from "@/components/EmployeesChart"
-import Breakdown from "@/components/Breakdown"
+import EmployeesChart from "@/components/dashboard/EmployeesChart"
+import Breakdown from "@/components/dashboard/Breakdown"
 
 const AdminOverview = async () => {
   const employees = await getEmployees()

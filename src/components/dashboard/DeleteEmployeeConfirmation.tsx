@@ -1,7 +1,7 @@
 "use client"
 
 import { getBaseUrl } from "@/helpers/config/envConfig";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { useProfile } from "@/hooks/useProfile";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';

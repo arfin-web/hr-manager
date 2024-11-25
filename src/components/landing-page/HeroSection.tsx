@@ -17,11 +17,19 @@ export default function HeroSection() {
                         drive growth.
                     </p>
                     {
-                        profile?.email ? <div className="mx-auto w-[150px] pt-4">
-                            <Link href="/dashboard">
-                                <Button size="lg" className="w-full font-bold">Dashboard</Button>
-                            </Link>
-                        </div> : <div className="mx-auto w-[150px] pt-4">
+                        profile?.email ? <>
+                            {
+                                profile?.role === "admin" ? <div className="mx-auto w-[150px] pt-4">
+                                    <Link href="/admin-overview">
+                                        <Button size="lg" className="w-full font-bold">Dashboard</Button>
+                                    </Link>
+                                </div> : <div className="mx-auto w-[150px] pt-4">
+                                    <Link href="/employee-overview">
+                                        <Button size="lg" className="w-full font-bold">Dashboard</Button>
+                                    </Link>
+                                </div>
+                            }
+                        </> : <div className="mx-auto w-[150px] pt-4">
                             <Link href="/login">
                                 <Button size="lg" className="w-full font-bold">Get Started</Button>
                             </Link>

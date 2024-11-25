@@ -1,5 +1,5 @@
-import AddDepartmentForm from "@/components/AddDepartmentForm"
-import DeleteDepartment from "@/components/DeleteDepartment"
+import AddDepartmentForm from "@/components/dashboard/AddDepartmentForm"
+import DeleteDepartment from "@/components/dashboard/DeleteDepartment"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -14,7 +14,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
-import UpdateDepartment from "@/components/UpdateDepartment"
+import UpdateDepartment from "@/components/dashboard/UpdateDepartment"
 import getDepartments from "@/hooks/getDepartments"
 import { Edit, MonitorCog, Trash } from "lucide-react"
 import Link from "next/link"

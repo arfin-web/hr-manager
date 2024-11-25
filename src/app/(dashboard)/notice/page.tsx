@@ -1,4 +1,4 @@
-import DeleteNoticeConfirmation from "@/components/DeleteNoticeConfirmation"
+import DeleteNoticeConfirmation from "@/components/dashboard/DeleteNoticeConfirmation"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -13,7 +13,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
-import UpdatedNoticeForm from "@/components/UpdateNoticeForm"
+import UpdatedNoticeForm from "@/components/dashboard/UpdateNoticeForm"
 import { format } from "date-fns"
 import { BellElectric, Edit, Trash } from "lucide-react"
 import Link from "next/link"

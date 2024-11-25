@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, User, Users, Waypoints } from "lucide-react"
+import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, Megaphone, User, Users, Waypoints } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -16,10 +16,10 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
-import { Separator } from "./ui/separator"
+import { Separator } from "../ui/separator"
 import { useProfile } from "@/hooks/useProfile";
 import { usePathname } from "next/navigation"
-import Logo from "./landing-page/Logo"
+import Logo from "../landing-page/Logo"
 
 // This is sample data.
 const navMain = [
@@ -45,6 +45,12 @@ const navMain = [
     title: "Departments",
     url: "/departments",
     icon: <Waypoints className="w-4 h-4" />,
+    role: "admin"
+  },
+  {
+    title: "Attendance",
+    url: "/attendance",
+    icon: <Megaphone className="w-4 h-4" />,
     role: "admin"
   },
   {

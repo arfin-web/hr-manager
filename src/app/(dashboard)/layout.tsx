@@ -1,11 +1,11 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/components/dashboard/app-sidebar"
 import { Separator } from "@/components/ui/separator"
 import {
     SidebarInset,
     SidebarProvider,
     SidebarTrigger,
 } from "@/components/ui/sidebar"
-import MyProfileButton from "@/components/MyProfileButton"
+import MyProfileButton from "@/components/dashboard/MyProfileButton"
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function DashboardLayout({

@@ -1,4 +1,4 @@
-import DashboardLoader from "@/components/DashboardLoader";
+import DashboardLoader from "@/components/dashboard/DashboardLoader";
 
 const Loading = () => {
     return (

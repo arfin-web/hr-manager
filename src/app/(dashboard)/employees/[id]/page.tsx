@@ -4,7 +4,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
-import EditProfileForm from '@/components/EditProfileForm'
+import EditProfileForm from '@/components/dashboard/EditProfileForm'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { getBaseUrl } from "@/helpers/config/envConfig"
