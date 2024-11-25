@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, Network, User, Users, Waypoints } from "lucide-react"
+import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, User, Users, Waypoints } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -19,6 +19,7 @@ import Link from "next/link"
 import { Separator } from "./ui/separator"
 import { useProfile } from "@/hooks/useProfile";
 import { usePathname } from "next/navigation"
+import Logo from "./landing-page/Logo"
 
 // This is sample data.
 const navMain = [
@@ -96,17 +97,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <div
-          className="flex justify-start items-center gap-2"
-        >
-          <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-primary text-muted">
-            <Network className="size-4" />
-          </div>
-          <div className="flex flex-col gap-0.5 leading-none">
-            <span className="font-semibold">Dashboard</span>
-            <span className="">v 1.0</span>
-          </div>
-        </div>
+        <Logo />
       </SidebarHeader>
       <SidebarContent>
         {/* We create a SidebarGroup for each parent. */}

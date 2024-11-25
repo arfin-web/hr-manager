@@ -78,11 +78,10 @@ export function LoginForm() {
       })
     }
   };
-  // b1ty4nofq
   return (
     <div className="container mx-auto px-2 py-2 lg:px-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-        <form className="mt-3 lg:mt-20 p-2 lg:p-5 order-2 lg:order-1" onSubmit={handleSubmit(onSubmit)}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 place-items-center">
+        <form className="p-2 lg:p-5 order-2 lg:order-1" onSubmit={handleSubmit(onSubmit)}>
           <h3 className="text-2xl font-bold text-primary">Login</h3>
           <h4>
             Enter your email below to login to your account
@@ -164,7 +163,14 @@ export function LoginForm() {
             alt="Login Image"
             width={500}
             height={500}
-            className="w-full rounded-r-md"
+            className="w-full rounded-r-md dark:hidden"
+          />
+          <Image
+            src="https://ik.imagekit.io/b1ty4nofq/hr-manager/loginDark.png?updatedAt=1732550227462"
+            alt="Login Image"
+            width={500}
+            height={500}
+            className="w-full rounded-r-md hidden dark:block"
           />
         </div>
       </div>

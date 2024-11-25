@@ -1,10 +1,12 @@
-import { LoginForm } from "@/components/LoginForm";
+import HeroSection from "@/components/landing-page/HeroSection";
+import Navbar from "@/components/landing-page/Navbar";
 
 export default function Home() {
   return (
     <>
-      <div className="flex h-screen w-full items-center justify-center px-4">
-        <LoginForm />
+      <div>
+        <Navbar />
+        <HeroSection />
       </div>
     </>
   );
