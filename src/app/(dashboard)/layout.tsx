@@ -6,6 +6,7 @@ import {
     SidebarTrigger,
 } from "@/components/ui/sidebar"
 import MyProfileButton from "@/components/MyProfileButton"
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function DashboardLayout({
     children,
@@ -21,7 +22,10 @@ export default function DashboardLayout({
                         <SidebarTrigger />
                         <Separator orientation="vertical" className="ml-2 h-4" />
                     </div>
-                    <MyProfileButton />
+                    <div className="flex justify-end items-center gap-2">
+                        <ThemeToggle />
+                        <MyProfileButton />
+                    </div>
                 </header>
                 <Separator />
                 <div className="container mx-auto p-2 lg:p-4">
