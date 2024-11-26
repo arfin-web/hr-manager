@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { BellElectric, CircleDollarSign, ClipboardList, LayoutDashboard, Megaphone, User, Users, Waypoints } from "lucide-react"
+import { BellElectric, CircleDollarSign, ClipboardList, GitPullRequest, LayoutDashboard, Megaphone, User, Users, Waypoints } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -58,6 +58,18 @@ const navMain = [
     url: "/my-Profile",
     icon: <User className="w-4 h-4" />,
     role: "employee"
+  },
+  {
+    title: "Leave Request",
+    url: "/leave-request",
+    icon: <GitPullRequest className="w-4 h-4" />,
+    role: "employee"
+  },
+  {
+    title: "Leave Requests",
+    url: "/leave-requests",
+    icon: <GitPullRequest className="w-4 h-4" />,
+    role: "admin"
   },
   {
     title: "Payroll",

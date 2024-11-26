@@ -30,12 +30,12 @@ HR-Manager is a comprehensive Human Resources Management System (HRMS) designed 
    - Secure, role-based access for Admins and Employees.
    - Admins have full control over management functions, while employees have limited access to personal and relevant information.
 
-### 7. Attendance and Leave Management (Future Enhancements)
-   - Record employee attendance and manage leave requests (coming soon).
+### 7. Attendance and Leave Management
+   - Record employee attendance and manage leave requests.
 
 ## Technologies Used
    - **Backend**: Node.js, Express.js, Mongoose, MongoDB
-   - **Frontend**: Next.js, React, TypeScript
+   - **Frontend**: Next.js, React, TypeScript, Tailwind CSS, Shadcn UI
    - **Authentication**: Custom
    - **Deployment**: Vercel, integrated with MongoDB Atlas
 

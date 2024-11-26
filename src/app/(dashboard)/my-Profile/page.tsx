@@ -43,6 +43,10 @@ const MyProfile = () => {
                                 <p>{profile?.designation}</p>
                             </div>
                             <div>
+                                <h3 className="font-semibold">Department</h3>
+                                <p>{profile?.department}</p>
+                            </div>
+                            <div>
                                 <h3 className="font-semibold">Stipend</h3>
                                 <p>$ {profile?.stipend}</p>
                             </div>
