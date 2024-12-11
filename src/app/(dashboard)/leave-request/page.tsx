@@ -1,4 +1,5 @@
 import ApprovedRequests from "@/components/dashboard/ApprovedRequests"
+import MyLeaveOverview from "@/components/dashboard/MyLeaveOverview"
 import PendingRequests from "@/components/dashboard/PendingRequests"
 import RejectedRequests from "@/components/dashboard/RejectedRequests"
 import { Button } from "@/components/ui/button"
@@ -14,11 +15,12 @@ export default function LeaveRequest() {
     return (
         <>
             <div className="w-full flex justify-between items-center px-2">
-                <h2 className="text-lg font-bold">Your <span className="text-primary">Requests</span></h2>
+                <h2 className="text-lg font-bold">Manage <span className="text-primary">Leaves</span></h2>
                 <Link href="/leave-request/send-new">
                     <Button className="shadow-md">Send New</Button>
                 </Link>
             </div>
+            <MyLeaveOverview />
             <Tabs defaultValue="approved" className="p-2 mt-4">
                 <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="approved">Approved</TabsTrigger>

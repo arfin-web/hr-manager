@@ -36,7 +36,7 @@ const MyTasks = () => {
                             return (
                                 <TableRow key={task._id}>
                                     <TableCell className="font-medium">{task.email}</TableCell>
-                                    <TableCell>{format(task.deadlinedate, "PPP")}</TableCell>
+                                    <TableCell>{task.deadlinedate}</TableCell>
                                     <TableCell>{task.status}</TableCell>
                                     <TableCell className="flex justify-start items-center gap-2">
                                         <Link href={`/my-tasks/${task._id}`}>

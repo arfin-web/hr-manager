@@ -20,7 +20,7 @@ const EmployeePayrollUpdate = ({ profileData }: any) => {
             date: format(new Date(), "PPP"),
             month: format(new Date(), "MMMM"),
             year: new Date().getFullYear(),
-            status: "paid",
+            status: profileData?.status,
         },
     });
 
@@ -114,6 +114,20 @@ const EmployeePayrollUpdate = ({ profileData }: any) => {
                             {...register("stipend", { required: "Stipend is required", min: 0 })}
                         />
                     </div>
+
+                </div>
+
+                <div className="grid gap-2">
+                    <label htmlFor="status">Status</label>
+                    <select
+                        {...register("status", { required: "Status is required" })}
+                        id="status"
+                    >
+                        <option value="">Select status</option>
+                        <option value="paid">Reguler</option>
+                        <option value="advance">Advance</option>
+                        <option value="bonus">Bonus</option>
+                    </select>
                 </div>
 
                 <Button type="submit" className="w-full">

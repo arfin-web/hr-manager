@@ -124,6 +124,7 @@ const SendNewLeaveRequest = () => {
                         <option value="">Select Leave Type</option>
                         <option value="sick">Sick</option>
                         <option value="casual">Casual</option>
+                        <option value="annual">Annual</option>
                     </select>
                 </div>
 

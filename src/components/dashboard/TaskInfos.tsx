@@ -18,7 +18,7 @@ const TaskInfos = ({ task }: any) => {
             </div>
             <div>
                 <h3 className="font-semibold">Deadline Date</h3>
-                <p>{format(task?.deadlinedate, "PPP")}</p>
+                <p>{task?.deadlinedate}</p>
             </div>
             <div>
                 <h3 className="font-semibold">Deadline Time</h3>

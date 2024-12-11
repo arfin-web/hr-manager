@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/table"
 import getStipends from "@/hooks/getStipends"
 
-const PaidPayments = async () => {
+const AdvancePayments = async () => {
     const stipends = await getStipends()
     return (
         <div className="flex flex-1 flex-col gap-4">
@@ -25,7 +25,7 @@ const PaidPayments = async () => {
                 </TableHeader>
                 <TableBody>
                     {stipends?.map((stipend: any) => {
-                        if (stipend.status === "paid") {
+                        if (stipend.status === "advance") {
                             return (
                                 <TableRow key={stipend._id}>
                                     <TableCell className="font-medium">{stipend.name}</TableCell>
@@ -43,4 +43,4 @@ const PaidPayments = async () => {
     )
 }
 
-export default PaidPayments
+export default AdvancePayments
