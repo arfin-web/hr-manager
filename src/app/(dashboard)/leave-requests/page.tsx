@@ -10,12 +10,14 @@ import {
 import getLeaveRequests from "@/hooks/getLeaveRequests"
 import { Edit, MonitorCog, Trash } from "lucide-react"
 import UpdateLeaveStatus from "@/components/dashboard/UpdateLeaveStatus"
+import LeavesOverview from "@/components/dashboard/LeavesOverview"
 
 const LeaveRequests = async () => {
     const leaveRequests = await getLeaveRequests()
     return (
         <>
             <h2 className="text-lg font-bold">All <span className="text-primary">Leave Requests</span></h2>
+            <LeavesOverview />
             <div className="grid auto-rows-min gap-4 md:grid-cols-3 mt-4">
                 {
                     leaveRequests?.map((request: any) => (

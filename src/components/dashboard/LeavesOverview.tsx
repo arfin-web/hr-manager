@@ -1,12 +1,12 @@
 "use client";
 
 import { BookOpenCheck, BriefcaseBusiness } from "lucide-react";
-import { useMyLeaveData } from "@/hooks/useMyLeaveData";
+import { useLeaveData } from "@/hooks/useLeaveData";
 
-const MyLeaveOverview = () => {
-    const { leaveData, profile } = useMyLeaveData();
+const LeaveOverview = () => {
+    const { leaveData } = useLeaveData();
 
-    if (!profile) {
+    if (!leaveData) {
         return <div>Loading...</div>;
     }
 
@@ -41,4 +41,4 @@ const MyLeaveOverview = () => {
     );
 };
 
-export default MyLeaveOverview;
+export default LeaveOverview;

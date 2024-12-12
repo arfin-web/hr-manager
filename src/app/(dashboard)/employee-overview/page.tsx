@@ -1,5 +1,6 @@
 "use client"
 
+import MyLeavesChart from "@/components/dashboard/MyLeavesChart";
 import { useProfile } from "@/hooks/useProfile";
 import { useTasks } from "@/hooks/useTasks";
 import { BookCheck, ChartNoAxesColumnIncreasing, ClipboardList, LayoutList, PackageCheck } from "lucide-react"
@@ -58,7 +59,9 @@ const EmployeeOverviewPage = () => {
                     ))
                 }
             </div>
-            <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+            <div>
+                <MyLeavesChart />
+            </div>
         </div>
     )
 }
