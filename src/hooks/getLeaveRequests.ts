@@ -7,7 +7,7 @@ const getLeaveRequests = async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            cache: 'no-store',
+            cache: 'default',
             next: {
                 revalidate: 50000
             }

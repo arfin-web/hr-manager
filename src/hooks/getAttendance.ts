@@ -7,10 +7,7 @@ const getAttendance = async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            cache: 'no-store',
-            next: {
-                revalidate: 50000
-            }
+            cache: 'no-store'
         })
         let result = await data.json()
         const attendances = result.data
