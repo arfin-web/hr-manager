@@ -7,7 +7,10 @@ const getStipends = async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            cache: 'no-store'
+            cache: 'no-store',
+            next: {
+                revalidate: 50000
+            }
         })
         let result = await data.json()
         const stipends = result.data
