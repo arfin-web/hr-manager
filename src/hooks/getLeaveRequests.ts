@@ -7,10 +7,7 @@ const getLeaveRequests = async () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            cache: 'default',
-            next: {
-                revalidate: 50000
-            }
+            cache: 'no-cache',
         })
         let result = await data.json()
         const leaverequests = result.data

@@ -14,7 +14,7 @@ import Link from "next/link"
 export default function LeaveRequest() {
     return (
         <>
-            <div className="w-full flex justify-between items-center px-2">
+            <div className="w-full flex justify-between items-center py-2">
                 <h2 className="text-lg font-bold">Manage <span className="text-primary">Leaves</span></h2>
                 <Link href="/leave-request/send-new">
                     <Button className="shadow-md">Send New</Button>

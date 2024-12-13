@@ -114,6 +114,16 @@ const SendNewLeaveRequest = () => {
                     />
                 </div>
 
+                {/* Leave Days */}
+                <div className="space-y-2">
+                    <label className="block font-medium">Leave Days</label>
+                    <input
+                        type="text"
+                        className="border rounded px-3 py-2 w-full"
+                        {...register("leaveDays", { required: "leaveDays is required" })}
+                    />
+                </div>
+
                 {/* Leave Type */}
                 <div className="space-y-2">
                     <label className="block font-medium">Leave Type</label>

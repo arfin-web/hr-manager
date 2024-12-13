@@ -86,6 +86,7 @@ const RequestsByPerson = async ({ params }: { params: { id: any } }) => {
                             <TableHead className="w-12 lg:w-auto">Name</TableHead>
                             <TableHead>Designation</TableHead>
                             <TableHead>Type</TableHead>
+                            <TableHead>Leave Days</TableHead>
                             <TableHead>Action</TableHead>
                         </TableRow>
                     </TableHeader>
@@ -97,6 +98,7 @@ const RequestsByPerson = async ({ params }: { params: { id: any } }) => {
                                         <TableCell className="font-medium">{employee.name}</TableCell>
                                         <TableCell>{employee.designation}</TableCell>
                                         <TableCell>{employee.leaveType}</TableCell>
+                                        <TableCell>{employee.leaveDays}</TableCell>
                                         <TableCell>
                                             <Dialog>
                                                 <DialogTrigger asChild>

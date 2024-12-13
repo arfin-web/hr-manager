@@ -23,6 +23,7 @@ const RejectedRequests = () => {
                         <TableHead className="w-12 lg:w-auto">Name</TableHead>
                         <TableHead>Email</TableHead>
                         <TableHead>Type</TableHead>
+                        <TableHead>Leave Days</TableHead>
                         <TableHead>Status</TableHead>
                     </TableRow>
                 </TableHeader>
@@ -32,6 +33,7 @@ const RejectedRequests = () => {
                             <TableCell className="font-medium">{request.name}</TableCell>
                             <TableCell>{request.email}</TableCell>
                             <TableCell>{request.leaveType}</TableCell>
+                            <TableHead>Leave Days</TableHead>
                             <TableCell>{request.status}</TableCell>
                         </TableRow>
                     ))}
