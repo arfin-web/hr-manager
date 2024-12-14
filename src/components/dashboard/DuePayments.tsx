@@ -15,17 +15,21 @@ import EmployeePayrollUpdate from "./EmployeePayrollUpdate";
 import getEmployees from "@/hooks/getEmployees";
 import getStipends from "@/hooks/getStipends";
 import { Button } from "@/components/ui/button";
+import { format } from "date-fns";
 
 const DuePayments = async () => {
     const employees = await getEmployees();
     const stipends = await getStipends();
 
+    const currentMonth = format(new Date(), "MMMM")
+
     // Extract emails of employees who have already been paid
-    const paidEmployeeEmails = stipends?.map((stipend: any) => stipend.email) || [];
+    // const paidEmployeeEmails = stipends?.map((stipend: any) => stipend.email) || [];
+    const previousMonthPaid = stipends?.map((stipend: any) => stipend.month !== currentMonth) || []
 
     // Filter employees to exclude those who have already been paid
     const dueEmployees = employees?.filter(
-        (employee: any) => !paidEmployeeEmails.includes(employee.email)
+        (employee: any) => !previousMonthPaid.includes(employee.email)
     );
 
     return (

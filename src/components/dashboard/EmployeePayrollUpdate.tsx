@@ -64,6 +64,21 @@ const EmployeePayrollUpdate = ({ profileData }: any) => {
         }
     };
 
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ]
+
     return (
         <div className="w-full max-w-lg mx-auto">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -115,6 +130,21 @@ const EmployeePayrollUpdate = ({ profileData }: any) => {
                         />
                     </div>
 
+                </div>
+
+                <div className="grid gap-2">
+                    <label htmlFor="month">Month</label>
+                    <select
+                        {...register("month", { required: "Month is required" })}
+                        id="month"
+                    >
+                        <option value="">Select Month</option>
+                        {
+                            months.map((month, index) => (
+                                <option key={index} value={month}>{month}</option>
+                            ))
+                        }
+                    </select>
                 </div>
 
                 <div className="grid gap-2">

@@ -9,7 +9,7 @@ const getTasks = async () => {
             },
             cache: 'default',
             next: {
-                revalidate: 50000
+                revalidate: 5000
             }
         })
         let result = await data.json()
